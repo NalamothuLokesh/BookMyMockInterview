@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --primary:#6c8cff;
+  --accent:#4dd0e1;
+  --surface:#0b1220;
+  --text:#e6eef8;
+  --radius:10px;
+}
+
+html,body,#root{
+  height:100%;
+  background: linear-gradient(180deg,#071022 0%, #0b1224 100%);
+  color:var(--text);
+}
+
+/* Utility */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:1.25rem;
+}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  padding:1rem;
+  border-radius:var(--radius);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.small{font-size:0.95rem}
+.muted{color:var(--muted)}
+
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--text);cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--primary),#4f6cff);border:none;color:white}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.mr-10{margin-right:10px}
+
+/* layout */
+.app-shell{min-height:100%;display:flex;flex-direction:column}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem}
+.app-body{display:flex;gap:1rem;padding:1rem}
+.sidebar{width:220px;padding:1rem}
+.sidebar nav{display:flex;flex-direction:column;gap:0.5rem}
+.sidebar a{color:var(--muted);padding:0.5rem;border-radius:8px;text-decoration:none}
+.sidebar a.active, .sidebar a:hover{background:rgba(108,140,255,0.08);color:var(--primary);border:1px solid rgba(108,140,255,0.08)}
+.app-main{flex:1}
+.footer{padding:1rem;margin-top:auto;border-top:1px solid rgba(255,255,255,0.02);text-align:center}
+
+.row{display:flex;align-items:center}
+.row.nav-actions{align-items:center;gap:0.5rem}
+
+/* cards and forms */
+.card h1{margin-bottom:0.75rem}
+.input-group{margin-bottom:0.75rem}
+input,textarea,select{width:100%;padding:0.65rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text)}
+
+/* Ensure dropdown options are readable on dark theme */
+select { background: rgba(255,255,255,0.02); color: var(--text); }
+select option { background: var(--card); color: var(--text); }
+select:focus { outline: none; box-shadow: 0 0 0 3px rgba(108,140,255,0.08); }
+/* remove default arrow on some browsers to allow consistent styling */
+select::-ms-expand { display: none; }
+
+.spacer-inline{display:inline-block;width:10px}
+
+@media(max-width:900px){
+  .app-body{flex-direction:column}
+  .sidebar{width:100%}
+}
+
+/* Polished UI extras */
+.brand { display:flex; align-items:center; gap:12px; }
+.logo h1 { margin:0; font-size:1.1rem; letter-spacing:0.2px }
+
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(108,140,255,0.12);color:var(--primary);font-weight:600;font-size:0.85rem}
+.role-badge{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600}
+
+.avatar{width:32px;height:32px;border-radius:999px;background:linear-gradient(90deg,var(--primary),#4f6cff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+.profile-card{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.profile-meta{display:flex;flex-direction:column}
+.user-name{font-size:1.05rem;font-weight:700}
+.user-role{font-size:0.9rem;color:var(--muted)}
+
+/* Navbar compact name */
+.navbar .nav-actions .user-name{max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.navbar .nav-actions .btn{padding:0.45rem 0.75rem}
+
+/* subtle status colors */
+.status-pending{color:#f59e0b}
+.status-confirmed{color:#10b981}
+.status-rejected{color:#ef4444}
+
+@media(max-width:600px){
+  .avatar{width:32px;height:32px}
+  .logo h1{font-size:1rem}
+}

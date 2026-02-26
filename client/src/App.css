@@ -1,0 +1,9 @@
+/* App root wrapper */
+#root{min-height:100%;}
+
+.logo{display:flex;align-items:center;gap:10px}
+.logo h1{font-size:1.25rem;margin:0}
+
+.card{padding:1.25rem}
+
+.read-the-docs{color:var(--muted)}
