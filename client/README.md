@@ -1,16 +1,42 @@
-# React + Vite
+# 🚀 Mock Interview Application - Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This directory contains the frontend source code for the Mock Interview Application, built with React and Vite.
 
-Currently, two official plugins are available:
+## 📖 Application Overview & Workflow
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **Note:** For the complete application startup instructions, backend details, and tech stack, please refer to the [Main README](../README.md) in the root directory.
 
-## React Compiler
+The frontend is responsible for delivering a smooth and interactive experience for all users of the platform. The workflow is divided by roles:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎯 Interviewee Workflow
+- **Public & Home Pages**: View available interviews with domain-specific filtering.
+- **Authentication**: Register, login, and reset passwords securely.
+- **Booking Flow**: Proceed from interview details to a booking system where available slots are selected.
+- **Dashboard**: Access the `/my-bookings` route to manage scheduled and past mock interviews securely.
 
-## Expanding the ESLint configuration
+### 👔 Interviewer Workflow
+- **Creation Dashboard**: Authenticated interviewers can access the `/create-interview` route to publish new mock sessions.
+- **Management**: Track published interviews using the `/my-interviews` route.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Running the Client Locally
+
+Typically, the client and server are started together from the root using `npm run dev`. However, to run only the frontend:
+
+1. Navigate to the client folder:
+   ```bash
+   cd client
+   ```
+2. Install dependencies (if not done already):
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🗂️ Key Client Directories
+
+- `/src/pages` - View layer mapping to the application's React Router paths.
+- `/src/components` - Reusable UI components (Layout, Auth guards, etc.).
+- `/src/routes` - Public and Protected route handler logic.
